@@ -1,0 +1,8 @@
+
+#!/usr/local/bin/ruby
+
+require_relative "../config/environment"
+
+
+CLI.new.start
+#CLI.new.connection_test
