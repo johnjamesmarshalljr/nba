@@ -23,5 +23,6 @@ class CLI
     API.all_players.each.with_index(1) do |player, idx|
       puts "#{idx}. #{player}"
   end
+end
 
 end
