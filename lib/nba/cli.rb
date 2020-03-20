@@ -23,7 +23,7 @@ class CLI
       API.get_players #calls API to get list of NBA teams
         # self.parse_players
       self.display_players_list
-
+      #self.get_input
   end
 #   def parse_players
 #       @@all = Player.all.each {|player| puts player.firstName}
@@ -43,9 +43,14 @@ class CLI
       puts "#{idx}. #{player.firstName} #{player.lastName}"
 
   end
-  # def get user inpute
-  #   player.all
 
+#   def get_input
+#     input = gets.chomp
+#     binding.pry
+#     Player.all
+#   # def get user inpute
+#   #   player.all
+# end
 end
 
 end
