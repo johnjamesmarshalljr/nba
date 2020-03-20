@@ -8,11 +8,11 @@ class API
 
       @@all_players.each {|hash| Player.new(hash)}
 
-
+      #@@all_players.map {|hash| hash.values}
       #response['league']['standard'][0][:firstName.to_s] -- gets first name of player
 
       # ['league']['standard'][1]
-          # binding.pry
+           #binding.pry
   end
 
 

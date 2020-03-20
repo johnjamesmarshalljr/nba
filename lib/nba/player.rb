@@ -6,16 +6,25 @@ class Player
     def initialize(attributes)
         attrs_from_hash(attributes)
         @@all << self
+
     end
 
+
+    # def self.puts_name
+    #   self.each do |player| puts self.name end
+    # end
 
     def attrs_from_hash(attributes)
       attributes.each {|key, value| self.send(("#{key}="), value)}
+
+
     end
 
-    def self.all 
+    def self.all
       @@all
     end
+
+
     # def self.get_players
     #   API.get_players
     #   all
