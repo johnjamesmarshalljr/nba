@@ -22,12 +22,16 @@ class CLI
   end
 
   def parse_players
-    API.all_players.each {|hash| hash.values}
+      @@all = Player.all.each {|player| puts player.firstName}
 #binding.pry
    end
 
+   def self.all
+     @@all
+   end
+
   def display_players_list
-    API.all_players.each.with_index(1) do |player, idx|
+    Player.all.each.with_index(1) do |player, idx|
       puts "#{idx}. #{player}"
   end
 
