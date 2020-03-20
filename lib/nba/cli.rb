@@ -6,7 +6,9 @@ class CLI
 
     self.welcome
     self.get_players_list
-
+    # self.get_user_input
+    # self.goodbye
+    # self.validate(@input)
   end
 
   def welcome
@@ -20,37 +22,52 @@ class CLI
 
   def get_players_list
     # binding.pry
-      API.get_players #calls API to get list of NBA teams
-        # self.parse_players
+      API.get_players
       self.display_players_list
-      #self.get_input
   end
-#   def parse_players
-#       @@all = Player.all.each {|player| puts player.firstName}
-# #binding.pry
-#    end
 
    def self.all
-
      @@all
-
    end
 
   def display_players_list
-
     Player.all.each.with_index(1) do |player, idx|
-
       puts "#{idx}. #{player.firstName} #{player.lastName}"
-
+    end
   end
 
-#   def get_input
-#     input = gets.chomp
-#     binding.pry
-#     Player.all
-#   # def get user inpute
-#   #   player.all
-# end
-end
+  # def get_user_input
+  #   @input = gets.strip
+  #   @input ==
+  #   if input.to_i > 0
+  #     put @input[input.to_i-1]
+  #   case input
+  #   when "num"
+  #     puts "More info on player 1"
+  #   # @input.each.with_index(1)
+  # end
+  #
+  # def goodbye
+  #   puts "awesome thanks!"
+  # end
 
+  # def validate(input)
+  #    player = Player.find_by_id(input)
+  #  end
+
+  #  def show_player_info
+  #    @input = Player
+  #  end
+
+
+  #   def get_input
+  #   input = gets.chomp
+  #   num = input
+  #   #binding.pry
+  #   Player.all.each {|player| puts player.find_index('num')}
+  # # def get user inpute
+  # #   player.all
+  #   end
+
+  #Player.attrs_from_hash()
 end
