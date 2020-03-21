@@ -44,9 +44,10 @@ class CLI
     pl = Player.find_by_name(firstName)
       pl.each do |pl|
         # binding.pry
-        puts "firstname: #{pl.firstName}"
-        puts "lastname: #{pl.lastName}"
-        puts "teamid: #{pl.teamId}"
+        puts "name: #{pl.firstName} #{pl.lastName}"
+        puts "years pro: #{pl.yearsPro}"
+        puts "country: #{pl.country}"
+        puts "first year: #{pl.nbaDebutYear}"
       # puts pl.pos
     end
   end
