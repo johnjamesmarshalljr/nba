@@ -40,11 +40,13 @@ class CLI
 
   end
 
-  def get_user_input(name)
-    pl = Player.find_by_name(name)
-      pl.each do |player|
+  def get_user_input(firstName)
+    pl = Player.find_by_name(firstName)
+      pl.each do |pl|
         # binding.pry
-      puts pl.firstName 
+        puts "firstname: #{pl.firstName}"
+        puts "lastname: #{pl.lastName}"
+        puts "teamid: #{pl.teamId}"
       # puts pl.pos
     end
   end

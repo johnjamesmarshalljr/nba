@@ -22,9 +22,9 @@ class Player
          @@all
     end
 
-    def self.find_by_name(name)
-        self.all.select do |array|
-        puts array.firstName
+    def self.find_by_name(input)
+        self.all.select do |firstName|
+        firstName.firstName == input
         end
       end
 
