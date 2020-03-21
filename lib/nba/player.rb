@@ -9,9 +9,9 @@ class Player
         @@all << self
     end
 
-    def set_int_id
-    @int_id = @@all.length + 1
-  end
+  #   def set_int_id
+  #   @int_id = @@all.length + 1
+  # end
 
 
     def attrs_from_hash(attributes)
@@ -19,12 +19,27 @@ class Player
     end
 
     def self.all
-      @@all
+         @@all
     end
 
-    def self.find_by_id(input)
-    all.find{|s| s.int_id == input.to_i}
-    end
+    def self.find_by_name(name)
+      self.all.each do |input|
+        input.select do |attributes|
+          puts attributes.firstName == name
+        end
+
+
+          # puts input.firstName == name
+        # binding.pry
+      end
+      end
+
+      # jj = Player.new(api)
+      # puts jj.all
+
+
+    # puts all.select{|s| s.int_id == input.to_i}
+
 
 
 

@@ -20,3 +20,5 @@ class API
     @@all_players
   end
 end
+
+# api = API.new

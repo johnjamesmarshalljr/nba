@@ -6,7 +6,7 @@ class CLI
 
     self.welcome
     self.get_players_list
-    # self.get_user_input
+    #  self.get_user_input
     # self.goodbye
     # self.validate(@input)
   end
@@ -32,12 +32,26 @@ class CLI
 
   def display_players_list
     Player.all.each.with_index(1) do |player, idx|
-      puts "#{idx}. #{player.firstName} #{player.lastName}"
+  puts "#{idx}. #{player.firstName} #{player.lastName}"
+  end
+  puts "Which player would you like info about?"
+   @input = gets.strip
+   get_user_input(@input)
+
+  end
+
+  def get_user_input(name)
+    pl = Player.find_by_name(name)
+      pl.each do |player|
+        # binding.pry
+      puts pl.firstName
+      # puts pl.pos
     end
   end
 
-  # def get_user_input
-  #   @input = gets.strip
+
+
+
   #   @input ==
   #   if input.to_i > 0
   #     put @input[input.to_i-1]
