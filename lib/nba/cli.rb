@@ -34,20 +34,29 @@ class CLI
     Player.all.each.with_index(1) do |player, idx|
   puts "#{idx}. #{player.firstName} #{player.lastName}"
   end
-  puts "Which player would you like info about?"
+  puts "Select the first name of your favorite player."
    @input = gets.strip
-   get_user_input(@input)
+   get_user_first_name(@input)
+   puts "Select the last name name of your favorite player."
+   @input = gets.strip
+   get_user_last_name(@input)
 
   end
 
-  def get_user_input(firstName)
+  def get_user_first_name(firstName)
     pl = Player.find_by_name(firstName)
       pl.each do |pl|
+          puts "name: #{pl.firstName} #{pl.lastName}"
+        end
+  end
         # binding.pry
-        puts "name: #{pl.firstName} #{pl.lastName}"
-        puts "years pro: #{pl.yearsPro}"
-        puts "country: #{pl.country}"
-        puts "first year: #{pl.nbaDebutYear}"
+  def get_user_last_name(lastName)
+    pl = Player.find_by_last_name(lastName)
+            pl.each do |pl|
+                puts "name: #{pl.firstName} #{pl.lastName}"
+                puts "years pro: #{pl.yearsPro}"
+                puts "country: #{pl.country}"
+                puts "first year: #{pl.nbaDebutYear}"
       # puts pl.pos
     end
   end

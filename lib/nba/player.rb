@@ -25,9 +25,14 @@ class Player
     def self.find_by_name(input)
         self.all.select do |firstName|
         firstName.firstName == input
-        end
+          end
       end
 
+    def self.find_by_last_name(input)
+        self.all.select do |lastName|
+          lastName.lastName == input
+        end
+    end
           # puts input.firstName == name
         # binding.pry
 
