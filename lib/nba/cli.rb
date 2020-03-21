@@ -44,7 +44,7 @@ class CLI
     pl = Player.find_by_name(name)
       pl.each do |player|
         # binding.pry
-      puts pl.firstName
+      puts pl.firstName 
       # puts pl.pos
     end
   end

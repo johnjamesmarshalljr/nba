@@ -23,16 +23,15 @@ class Player
     end
 
     def self.find_by_name(name)
-      self.all.each do |input|
-        input.select do |attributes|
-          puts attributes.firstName == name
+        self.all.select do |array|
+        puts array.firstName
         end
-
+      end
 
           # puts input.firstName == name
         # binding.pry
-      end
-      end
+
+
 
       # jj = Player.new(api)
       # puts jj.all
