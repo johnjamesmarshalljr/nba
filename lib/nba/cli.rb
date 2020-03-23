@@ -13,11 +13,10 @@ class CLI
 
   def welcome
 
-    puts 'welcome to the player stats portal'
-
+    puts 'Welcome to the NBA player info portal'
       sleep(2)
-
-    puts 'please select a player'
+    puts 'Follow the prompts to select a player'
+      sleep(1)
   end
 
   def get_players_list
@@ -32,34 +31,48 @@ class CLI
 
   def display_players_list
     Player.all.each.with_index(1) do |player, idx|
-  puts "#{idx}. #{player.firstName} #{player.lastName}"
-  end
-  puts "Select the first name of your favorite player."
-   @input = gets.strip
-   get_user_first_name(@input)
-   puts "Select the last name name of your favorite player."
-   @input = gets.strip
-   get_user_last_name(@input)
-
-  end
+      puts "#{idx}. #{player.firstName} #{player.lastName}"
+      end
+    puts "Select the first name of your favorite player."
+      @input = gets.strip
+      get_user_first_name(@input)
+    # puts "Select the last name name of your favorite player."
+    #   @input = gets.strip
+    #   get_user_last_name(@input)
+      end
 
   def get_user_first_name(firstName)
     pl = Player.find_by_name(firstName)
+      #binding.pry
       pl.each do |pl|
-          puts "name: #{pl.firstName} #{pl.lastName}"
+
+        puts "Name: #{pl.firstName} #{pl.lastName}"
+        puts "Years Pro: #{pl.yearsPro}"
+        puts "Country: #{pl.country}"
+        puts "First Year: #{pl.nbaDebutYear}"
+        puts "Position: #{pl.pos}"
+        puts "Jersey Number: #{pl.jersey}"
+        puts "DOB: #{pl.dateOfBirthUTC}"
+        puts "College: #{pl.collegeName}"
+
+
         end
   end
         # binding.pry
-  def get_user_last_name(lastName)
-    pl = Player.find_by_last_name(lastName)
-            pl.each do |pl|
-                puts "name: #{pl.firstName} #{pl.lastName}"
-                puts "years pro: #{pl.yearsPro}"
-                puts "country: #{pl.country}"
-                puts "first year: #{pl.nbaDebutYear}"
-      # puts pl.pos
-    end
-  end
+  # def get_user_last_name(lastName)
+  #   pl = Player.find_by_last_name(lastName)
+  #           pl.each do |pl|
+  #               puts "Name: #{pl.firstName} #{pl.lastName}"
+  #               puts "Years Pro: #{pl.yearsPro}"
+  #               puts "Country: #{pl.country}"
+  #               puts "First Year: #{pl.nbaDebutYear}"
+  #               puts "Position: #{pl.pos}"
+  #               puts "Jersey Number: #{pl.jersey}"
+  #               puts "DOB: #{pl.dateOfBirthUTC}"
+  #               puts "College: #{pl.collegeName}"
+  #     # puts pl.pos
+  #   end
+  # end
 
 
 

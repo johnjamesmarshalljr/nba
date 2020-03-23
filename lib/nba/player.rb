@@ -19,32 +19,26 @@ class Player
     end
 
     def self.all
-         @@all
+      @@all
     end
 
     def self.find_by_name(input)
-        self.all.select do |firstName|
-        firstName.firstName == input
-          end
-      end
+        self.all.select do |object|
+        fullname = "#{object.firstName} #{object.lastName}"
+        #binding.pry
+        fullname.upcase == input.upcase
+
+        end
+    end
 
     def self.find_by_last_name(input)
         self.all.select do |lastName|
           lastName.lastName == input
         end
     end
-          # puts input.firstName == name
+        # puts input.firstName == name
         # binding.pry
-
-
-
       # jj = Player.new(api)
       # puts jj.all
-
-
     # puts all.select{|s| s.int_id == input.to_i}
-
-
-
-
 end
