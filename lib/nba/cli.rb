@@ -32,14 +32,16 @@ class CLI
     Player.all.each.with_index(1) do |player, idx|
       puts "#{idx}. #{player.firstName} #{player.lastName}"
       end
-    puts "Select the first name of your favorite player."
+    puts "Select the name of your favorite player."
       @input = gets.strip
+
       get_user_first_name(@input)
+
   end
 
   def get_user_first_name(firstName)
     pl = Player.find_by_name(firstName)
-      #binding.pry
+
       pl.each do |pl|
 
         puts "Name: #{pl.firstName} #{pl.lastName}"
@@ -50,9 +52,10 @@ class CLI
         puts "Jersey Number: #{pl.jersey}"
         puts "DOB: #{pl.dateOfBirthUTC}"
         puts "College: #{pl.collegeName}"
-        puts "height: #{pl.heightFeet}\'#{pl.heightInches}\""
+        puts "Height: #{pl.heightFeet}\'#{pl.heightInches}\""
 
         end
   end
+
 
 end
