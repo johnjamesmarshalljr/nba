@@ -20,11 +20,10 @@ class Player
     def self.find_by_name(input)
         self.all.select do |object|
         fullname = "#{object.firstName} #{object.lastName}"
-
         fullname.upcase == input.upcase
-        end
+
+      end
+
     end
-
-
 
 end

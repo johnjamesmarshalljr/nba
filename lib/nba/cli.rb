@@ -35,9 +35,17 @@ class CLI
       get_player_name(@input)
   end
 
-  def get_player_name(firstName)
-    pl = Player.find_by_name(firstName)
-
+  def get_player_name(name)
+    pl = Player.find_by_name(name)
+      if pl.empty?
+        puts "Player does not exist"
+        sleep(1)
+        puts "Try again..."
+        puts "Select the name of your favorite player."
+        @input = gets.strip
+        get_player_name(@input)
+        #pl is an array
+      else
       pl.each do |pl|
 
         puts "Name: #{pl.firstName} #{pl.lastName}"
@@ -51,10 +59,12 @@ class CLI
         puts "Height: #{pl.heightFeet}\'#{pl.heightInches}\""
         puts "Weight: #{pl.weightPounds} lbs."
         puts "Drafted: #{pl.draft.values.last}"
-
-
         end
+
+
+       end
   end
+
 
 
 end
