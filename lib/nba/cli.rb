@@ -6,7 +6,7 @@ class CLI
 
     self.welcome
     self.get_players_list
-  
+
   end
 
   def welcome
@@ -21,9 +21,9 @@ class CLI
       self.display_players_list
   end
 
-   def self.all
-     @@all
-   end
+  #  def self.all
+  #    @@all
+  #  end
 
   def display_players_list
 
@@ -32,7 +32,6 @@ class CLI
       end
       puts "Select the name of your favorite player."
       @input = gets.strip
-
       get_player_name(@input)
   end
 
@@ -50,6 +49,9 @@ class CLI
         puts "DOB: #{pl.dateOfBirthUTC}"
         puts "College: #{pl.collegeName}"
         puts "Height: #{pl.heightFeet}\'#{pl.heightInches}\""
+        puts "Weight: #{pl.weightPounds} lbs."
+        puts "Drafted: #{pl.draft.values.last}"
+
 
         end
   end
