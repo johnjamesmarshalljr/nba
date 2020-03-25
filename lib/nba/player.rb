@@ -25,9 +25,6 @@ class Player
         end
     end
 
-    # def self.find_by_last_name(input)
-    #     self.all.select do |lastName|
-    #       lastName.lastName == input
-    #     end
-    # end
+
+
 end
